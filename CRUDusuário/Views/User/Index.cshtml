@@ -1,0 +1,37 @@
+﻿@model List<User>
+
+@{
+    ViewData["Title"] = "Listagem de usuários";
+}
+
+<div class="text-left">
+    <div class="text-center">
+        <h1 class="display-4">Listagem de contatos</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (User contato in Model)
+                    {
+                        <tr>
+                            <th scope="row">@contato.Id</th>
+                            <td>@contato.Name</td>
+                            <td>@contato.Email</td>
+                            <td>@contato.Id</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
